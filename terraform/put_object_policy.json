@@ -1,0 +1,18 @@
+{
+  "Id": "Policy123456789",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt123456789",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::$${public_bucket}",
+        "arn:aws:s3:::$${public_bucket}/*"
+      ],
+      "Principal": {"AWS":"*"}
+    }
+  ]
+}

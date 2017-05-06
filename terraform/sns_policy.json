@@ -1,0 +1,18 @@
+{
+  "Id": "Policy123456789",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt123456789",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:sns:*:*:$${sns_topic}",
+      "Principal": {"AWS":"*"},
+      "Condition":{
+            "ArnLike":{"aws:SourceArn":"$${public_upload_arn}"}
+        }
+    }
+  ]
+}
